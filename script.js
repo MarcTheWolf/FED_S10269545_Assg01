@@ -4,6 +4,10 @@ function showPreloader() {
     document.body.classList.add('no-scroll');
 }
 
+function sleep() {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function PageLoad() {
     const preloader = document.querySelector('.PreLoader');
     const body = document.body;
@@ -21,12 +25,12 @@ function PageLoad() {
         preloader.classList.add('hidden');
 })};
 
-window.onload = function() {
-  document.querySelector('.PreLoader').classList.remove('hidden')
-};
 
 window.addEventListener('load', function() {
-    setTimeout(PageLoad, 2000);
+    setTimeout(PageLoad, 1000);
+    setTimeout(function() {
+      window.scrollTo(0, 0);
+  }, 50);
 });
 
 const html = document.documentElement;
