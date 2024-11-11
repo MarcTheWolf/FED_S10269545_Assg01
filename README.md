@@ -46,3 +46,8 @@
 ## Testing
 
 ## Credits
+
+- <h3><u>CSS Animated Navigations Bar</u></h3>
+  - Sarath AR @ Codepen.io
+    
+    - https://codepen.io/sarath-ar/pen/MveqXe
