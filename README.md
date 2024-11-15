@@ -29,7 +29,7 @@ When you think about Movies or Drama Series, most people would think of Netflix,
 
 
 ### 2. __<u>Wireframing and Prototyping</u>__
-  - __Low-Fidelity Wireframes__: Creating basic wireframes with simple shapes and annotations to represent key UI elements like the navigation bar, content grids and  search bar. These wireframes help define the website’s layout and functionality without focusing on aesthetic details.
+  - __High-Fidelity Wireframes__: High-fidelity wireframes are detailed representations of a website's layout, incorporating realistic design elements like fonts, colors, and icons. They showcase the user interface in its final form, with interactive features such as buttons, menus, and content grids. These wireframes help define the structure and flow of the website, ensuring that the design is both visually appealing and functional before development begins. High-fidelity wireframes also highlight responsive design elements, ensuring the website works seamlessly across devices.
 
 ### 3. __<u>Visual Design and Branding</u>__
   - __Color Palette and Typography__: Selecting a color scheme and fonts that are modern, clean, and easy to read. For this website, I have decided to go for a black, white and blue aesthetic.
@@ -85,8 +85,13 @@ WIP
 ### WIP
 
 ## Technologies Used
+### Blender 
+- Used for the animation of the scroll-interactive background [here](#js-scroll-interactive-animated-background).
+
+
 
 ## Testing
+
 
 ## Credits
 
