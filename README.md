@@ -13,7 +13,7 @@
 
 
 ## About Project
-This website is made to imitate the well known streaming websites/companies like Netflix and Disney+. The website will focus on providing a clean and intuitive interface, where users can easily search for content. 
+The goal of the website is made to imitate the well known streaming websites/companies like Netflix and Disney+. The website will focus on providing a clean and intuitive interface, where users can easily search for content. 
 
 Features like animated backgrounds and scroll-triggered content transitions will make the platform visually engaging, similar to the interactive elements used by leading streaming services.
 

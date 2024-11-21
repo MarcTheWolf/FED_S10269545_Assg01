@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href="style.css" rel="stylesheet">
-    <title></title>
+    <title>Webflux</title>
 </head>
 <body class="no-scroll">
-  <section class="PreLoader">
+  <section class="PreLoader">  
     <div class="popcorn-container">
           <div class="kernel kernel1"></div>
           <div class="kernel kernel2"></div>
@@ -56,11 +56,12 @@
       </div>
     </div>
 
-    <div class=" container con1">
+    <div class=" container search-section">
       <div class="row">
         <div class="col col-12">
-          <form autocomplete="off" id="myForm">
+          <form autocomplete="off" id="searchbar">
               <div class="text-left bar">
+                <h3 id="title">Over 50M Movies</h3>
               <div class="autocomplete">
                   <input class="form-control " id="myInput" type="text" placeholder="Search Movies">
               </div>
@@ -68,13 +69,29 @@
               </div>
           </form>
         </div>
-        <div class="col col-12">
+      </div>
+    </div>
 
+    <div class="container poster-section" id="resultslist">
+      <div class="poster-container">
+        <h2 class="poster-title">Trending Now</h2>
+        <div class="poster-row">
+          <img class="poster-display" src="Images/Movie_Posters/The_Uncanny_Counter_2.jpg" alt="Poster">
+          <img class="poster-display" src="Images/Movie_Posters/Avengers_End_Game.jpg" alt="Poster">
+          <img class="poster-display" src="Images/Movie_Posters/Avengers_Infinity_War.jpeg" alt="Poster">
+          <img class="poster-display" src="Images/Movie_Posters/Avengers_Infinity_War.jpeg" alt="Poster">
+        </div>
+        <h2 class="poster-title">Only On Webflux</h2>
+        <div class="poster-row">
+          <img class="poster-display" src="Images/Movie_Posters/The_Uncanny_Counter_2.jpg" alt="Poster">
+          <img class="poster-display" src="Images/Movie_Posters/Avengers_End_Game.jpg" alt="Poster">
+          <img class="poster-display" src="Images/Movie_Posters/Avengers_Infinity_War.jpeg" alt="Poster">
+          <img class="poster-display" src="Images/Movie_Posters/Avengers_Infinity_War.jpeg" alt="Poster">
         </div>
       </div>
     </div>
-    <div class="container con2" id="resultslist">
-    </div>
+
+    
   </section>
   <script src="script.js"></script>
 </body>

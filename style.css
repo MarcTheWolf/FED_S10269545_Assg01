@@ -1,6 +1,11 @@
 body {
   background-color: black;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 /* ==============================
     __DIY__ Boostrap (Row, Col system)
    ============================== */
@@ -312,6 +317,12 @@ body {
   }
 }
 
+@media (max-width: 576px) {
+  .navbar-logo {
+    text-align: center;
+  }
+}
+
 
 /* ==============================
    Banner Animations
@@ -345,7 +356,7 @@ body {
    ============================== */
 
 
-#myForm {
+#searchbar {
   position: relative;
   left: 30px;
 }   
@@ -381,11 +392,10 @@ body {
   color: white
 }
 
-.con1 {
+.search-section {
   height: 500px;
   display: flex;
   justify-content: center;
-
 }
 
 .btn-search {
@@ -409,17 +419,41 @@ body {
 }
 
 .btn-search:hover {
-  background-color: #b88d00;
+  background-color: #359bfa15;
+}
+
+#title {
+  position: relative;
+  top: 300px;
+  left: 100px;
+  color: white;
+  font-size: 50px;
+  opacity: 0;
+  transition: left 1s ease-out, opacity 0.5s ease-out;
 }
 
 #myInput.visible { left: 0px; top: 0px; opacity: 1;}
 .btn-search.visible { left: 0px; top: 0px; opacity: 1;}
+#title.visible { opacity: 1; left: -100px;}
+
 @media (max-width: 576px) {
-  #myInput {
-    width: 190px;
+  #searchbar{
+    left: -15px;
+    top: -20%;
+
+  }
+
+  #myInput.visible {
+    width: 200px;
+  }
+
+  #title.visible {
+    font-size: 20px;
+    left: 20px;
   }
 
 }
+
 
 .autocomplete {
   position: relative;
@@ -450,10 +484,66 @@ body {
 }
 
 .autocomplete-active {
-  background-color: DodgerBlue !important;
+  background-color: #4e4e4e !important;
   color: #ffffff;
 }
 
-.con2 {
-  height: 10000px;
+.poster-section {
+  height: 1000px;
+  margin-top: 500px;
 }
+
+.poster-container {
+  margin-left: 20%;
+  margin-right: 20%;
+  overflow: hidden;
+}
+
+.poster-title {
+  color: white;
+  font-size: 35px;;
+}
+
+
+.poster-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  justify-content: center;
+  position: relative;
+  left: -120%;
+  transition: left 1s ease-out;
+}
+
+.poster-row.visible {
+  left: 0px; 
+}
+
+.poster-display {
+  height: auto;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+
+@media (max-width: 576px) {
+  .poster-section {
+    height: 1000px;
+    margin-top: 200px;
+  }
+  #poster-title {
+    font-size: 20px;;
+  }
+  .poster-container {
+    margin-left: 5%;
+    margin-right: 10%;
+  }
+  .poster-row {
+    gap: 8px;
+  }
+}
+
+
+
+
