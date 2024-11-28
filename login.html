@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="CSS/style.css" rel="stylesheet">
+    <title>Webflux</title>
+</head>
+<body>
+    <nav class="navbar visible">
+        <div class="container">
+            <div class="row menu">
+                <div class="navbar-logo col">
+                    <a href="index.html"><img src="/Images/WEBFLUX-LOGO.png" alt="Logo"></a>
+                </div>
+                <div class="navbar-menu col">
+                    <ul>
+                    <li><a class="hover" href="subscription.html">Subscriptions</a></li>
+                    <li id="user"><a class="active" href="#">Log-In</a></li>         
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="login-section">
+        <div class="login-container">
+            <video autoplay muted loop class= "background-vid">
+                <source src="Images/videos/comet-background.mp4">
+            </video>
+
+            <div class="signup-text">
+                <h2>Start your journey now</h2>
+                <p>Signup to enjoy Movies, series and many more benefits</p>
+
+                <button class="signinbtn">Already have an account?</button>
+            </div>
+
+            <div class="signin-text">
+                <h2>Welcome Back!</h2>
+                <p>We have been waiting for you!</p>
+                <p>Log in to check what's new!</p>
+
+                <button class="signupbtn">Don't have an account?</button>
+            </div>
+
+            <div class="slider left-slider">
+                
+                <div class="signup-form">
+                    <form>
+                        <h2>Signup</h2>
+                        <input type="email" name="email" placeholder="Email">
+                        <input type="password" name="password" placeholder="Password">
+                        <input type="password" name="cfmpassword" placeholder="Confirm Password">
+            
+                        <button>Get Started</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="slider right-slider">
+                <div class="signin-form">
+                    <form>
+                        <h2>Login</h2>
+                        <input type="email" name="email" placeholder="Email">
+                        <input type="password" name="password" placeholder="Password">
+            
+                        <button>Let's Go</button>
+                    </form>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    <script src="JS/login.js"></script>
+</body>
+</html>

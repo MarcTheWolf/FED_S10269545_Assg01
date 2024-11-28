@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link href="style.css" rel="stylesheet">
+    <link href="CSS/style.css" rel="stylesheet">
     <title>Webflux</title>
 </head>
 <body class="no-scroll">
-  <section class="PreLoader">  
+  <div class="PreLoader">  
     <div class="popcorn-container">
           <div class="kernel kernel1"></div>
           <div class="kernel kernel2"></div>
@@ -31,19 +31,19 @@
           <div class="popcorn kernel2"></div>
           <div class="popcorn kernel4"></div>
     </div>
-  </section>
+  </div>
 
-  <section class="Main">
+  <div class="Main">
     <nav class="navbar">
       <div class="container">
         <div class="row menu">
           <div class="navbar-logo col">
-            <img src="/Images/WEBFLUX-LOGO.png">
+            <a href="#"><img src="/Images/WEBFLUX-LOGO.png" alt="Logo"></a>
           </div>
           <div class="navbar-menu col">
             <ul>
-              <li><a href="#">Subscriptions</a></li>
-              <li><a href="#">Log-In</a></li>         
+              <li><a class="hover"href="subscription.html">Subscriptions</a></li>
+              <li id="user"><a class="hover" href="login.html">Log-In</a></li>         
             </ul>
           </div>
         </div>
@@ -52,7 +52,7 @@
 
     <div class="banner">
       <div class="video-background">
-        <canvas id="bgv" class="backgroundvideo"/>
+        <canvas id="bgv" class="backgroundvideo"></canvas>
       </div>
     </div>
 
@@ -63,8 +63,8 @@
               <div class="text-left bar">
                 <h3 id="title">Over 50M Movies</h3>
               <div class="autocomplete">
-                  <input class="form-control " id="myInput" type="text" placeholder="Search Movies">
-              </div>
+                  <input class="form-control " id="search-input" type="text" placeholder="Search Movies & Series">
+              </div>  
                   <button type="button" class="btn-search " id="search-button">Search!</button>
               </div>
           </form>
@@ -72,7 +72,7 @@
       </div>
     </div>
 
-    <div class="container poster-section" id="resultslist">
+    <div class="container poster-section">
       <div class="poster-container">
         <h2 class="poster-title">Trending Now</h2>
         <div class="poster-row">
@@ -91,8 +91,22 @@
       </div>
     </div>
 
+    <div class="container benefits-section">
+      <div class=" row">
+        <h2 class="benefits-title">Why Choose Webflux?</h2>
+      </div>
+      <div class="row benefits-container">
+        <div class="benefit-box box-1"><h4>Movies tailored to your taste</h4></div>
+        <div class="benefit-box box-2"><h4>Cancel or Switch Subscriptions anytime</h4></div>
+        <div class="benefit-box box-3"><h4>Kids Friendly</h4></div>
+        <div class="benefit-box box-4"><h4>Cross-Device Support</h4></div>
+        <div class="benefit-box box-5"><h4>Intuitive Interface</h4></div>
+        <div class="benefit-box box-6"><h4>Fast Download Time</h4></div>
+      </div>
+    </div>
+
     
-  </section>
-  <script src="script.js"></script>
+  </div>
+  <script src="JS/script.js"></script>
 </body>
 </html>
