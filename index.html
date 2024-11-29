@@ -8,7 +8,7 @@
     <title>Webflux</title>
 </head>
 <body class="no-scroll">
-  <div class="PreLoader">  
+  <div class="PreLoader hidden">  
     <div class="popcorn-container">
           <div class="kernel kernel1"></div>
           <div class="kernel kernel2"></div>
@@ -43,11 +43,20 @@
           <div class="navbar-menu col">
             <ul>
               <li><a class="hover"href="subscription.html">Subscriptions</a></li>
-              <li id="user"><a class="hover" href="login.html">Log-In</a></li>         
+              <li id="user">
+                <div class="user-menu">
+                  <ul>
+                    <li id="settings-btn">Settings</li>
+                    <li id="logout-btn">Log Out</li>
+                  </ul>
+                </div>   
+              </li>
             </ul>
           </div>
         </div>
       </div>
+
+      <button class="scroll-btn"><img src="Images/scroll-icon.svg"></button>
     </nav>
 
     <div class="banner">
@@ -105,7 +114,11 @@
       </div>
     </div>
 
-    
+
+    <div class="results-section" id="resultslist">
+      
+    </div>
+
   </div>
   <script src="JS/script.js"></script>
 </body>

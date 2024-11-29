@@ -17,7 +17,14 @@
                 <div class="navbar-menu col">
                     <ul>
                     <li><a class="hover" href="subscription.html">Subscriptions</a></li>
-                    <li id="user"><a class="active" href="#">Log-In</a></li>         
+                    <li id="user">
+                        <div class="user-menu">
+                          <ul>
+                            <li id="settings-btn">Settings</li>
+                            <li id="logout-btn">Log Out</li>
+                          </ul>
+                        </div>   
+                    </li>         
                     </ul>
                 </div>
             </div>
@@ -30,7 +37,7 @@
                 <source src="Images/videos/comet-background.mp4">
             </video>
 
-            <div class="signup-text">
+            <div class="signup-text move">
                 <h2>Start your journey now</h2>
                 <p>Signup to enjoy Movies, series and many more benefits</p>
 
@@ -54,7 +61,7 @@
                         <input type="password" name="password" placeholder="Password">
                         <input type="password" name="cfmpassword" placeholder="Confirm Password">
             
-                        <button>Get Started</button>
+                        <button class="login-btn">Get Started</button>
                     </form>
                 </div>
             </div>
@@ -66,12 +73,16 @@
                         <input type="email" name="email" placeholder="Email">
                         <input type="password" name="password" placeholder="Password">
             
-                        <button>Let's Go</button>
+                        <button class="login-btn">Let's Go</button>
                     </form>
                 </div>
             </div>
     
         </div>
+    </div>
+
+    <div class="loggedin-section hidden">
+        
     </div>
 
     <script src="JS/login.js"></script>

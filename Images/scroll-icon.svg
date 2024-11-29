@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 60" x="0px" y="0px">
+  <path d="M35,10H13a1,1,0,0,0,0,2H35a1,1,0,0,0,0-2Z" stroke="black" stroke-width="2" fill="none"/>
+  <path d="M26.46,19.79l-1.89-2a.83.83,0,0,0-1.2,0l-1.87,2L20.34,21.1A.82.82,0,0,0,21,22.48l2.05,0V33a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V22.45l2.06,0a.83.83,0,0,0,.59-1.4Z" stroke="black" stroke-width="2" fill="none"/>
+  <text x="0" y="63" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif"></text>
+  <text x="0" y="68" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif"></text>
+</svg>

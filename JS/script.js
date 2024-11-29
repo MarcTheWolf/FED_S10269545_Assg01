@@ -20,6 +20,7 @@ function PageLoad() {
       document.getElementById('search-input').classList.add('visible')
       document.querySelector('.btn-search').classList.add('visible')
       document.querySelector('#title').classList.add('visible')
+      document.querySelector('.scroll-btn').classList.add('visible')
     }, 1000);
 
     preloader.addEventListener('transitionend', function() {
@@ -38,7 +39,7 @@ window.addEventListener('load', function() {
 //Login System
 ////////////////////////////////////
 
-/*
+
 if (localStorage.getItem("logged-in") === null) {
   localStorage.setItem("logged-in", JSON.stringify(false));
 }
@@ -49,26 +50,51 @@ function updateLoginStatus() {
   const login = document.getElementById("user");
 
   if (isLoggedIn) {
-    login.innerHTML = `<img src="/Images/user-icon.svg" width="40" height="40" class="user-icon">`;
+    login.innerHTML = `<img src="/Images/user-icon.svg" class="user-icon">
+    <div class="user-menu">
+                  <ul>
+                    <li id="settings-btn">Settings</li>
+                    <li id="logout-btn">Log Out</li>
+                  </ul>
+                </div>   `;
   } else {
-    login.innerHTML = `<a href="#">Not Logged-In</a>`;
+    login.innerHTML = `<a class="hover" href="login.html">Log-In</a>`;
   }
 }
 
 
 updateLoginStatus();
 
+const usermenu = document.querySelector(".user-menu")
 
-const login = document.getElementById("user");
-login.addEventListener("click", function() {
+const usericon = document.querySelector(".user-icon")
+document.addEventListener("click", function(e) {
 
-  var isLoggedIn = JSON.parse(localStorage.getItem("logged-in"));
-  localStorage.setItem("logged-in", JSON.stringify(!isLoggedIn));
-
-  updateLoginStatus();
+  if (!usermenu.contains(e.target) && !usericon.contains(e.target)) {
+    if (usermenu.classList.contains("visible")) {
+      usermenu.classList.remove("visible");
+    }
+  }
 });
 
-*/
+
+usericon.addEventListener("click", function(e) {
+  usermenu.classList.toggle("visible");
+  e.stopPropagation();
+});
+
+
+const logoutbtn = document.querySelector("#logout-btn")
+
+if (logoutbtn) {
+  logoutbtn.addEventListener("click", function() {
+    localStorage.setItem("logged-in", JSON.stringify(false))
+    updateLoginStatus();
+  });
+}
+
+
+
 
 
 
@@ -269,21 +295,24 @@ const searchIS = {
       "Rating": "NC16",
       "Release": "2023",
       "Star Rating": "8.0/10",
-      "Img": "Images/Movie_Posters/The_Uncanny_Counter_2.jpg"
+      "Img": "Images/Movie_Posters/The_Uncanny_Counter_2.jpg",
+      "Desc" : "Noodle shop employees by day and demon hunters by night, the Counters use special abilities to chase down malevolent spirits that prey on humans."
     },
     "Avengers: Infinity War": {
       "Duration": "2hrs 29mins",
       "Rating": "PG13",
       "Release": "2018",
       "Star Rating": "8.4/10",
-      "Img": "Images/Movie_Posters/Avengers_Infinity_War.jpeg"
+      "Img": "Images/Movie_Posters/Avengers_Infinity_War.jpeg",
+      "Desc" : "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe."
     },
     "Avengers: End Game": {
       "Duration": "3hrs 1min",
       "Rating": "PG13",
       "Release": "2019",
       "Star Rating": "8.4/10",
-      "Img": "Images/Movie_Posters/Avengers_End_Game.jpg"
+      "Img": "Images/Movie_Posters/Avengers_End_Game.jpg",
+      "Desc" : "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
     }
 }
 
@@ -428,11 +457,53 @@ function displayResult(title) {
   if (searches.includes(title)) {
     var html = 
     `
+      <div class="results-title row">
+        <h2>${title}</h2>
+        <p>${searchIS[title]["Release"]} | ${searchIS[title]["Rating"]} | ${searchIS[title]["Duration"]}</p>
+        <div class="ratings">
+          <img src="Images/star.svg" alt="Stars">
+          <h3>${searchIS[title]["Star Rating"]}</h3>
+        </div>
+        <div class="movie-display row">
+          <img src="${searchIS[title]["Img"]}">
+          <video autoplay muted loop>
+            <source src="Images/videos/pixel-city.mp4">
+          </video>
+        </div>
+        <div class="results-desc row">
+          <img src="${searchIS[title]["Img"]}">
+          <p>${searchIS[title]["Desc"]}</p>
+        </div>
+      </div>
     `
     resultslist.innerHTML = html;
+
+    document.getElementById("resultslist").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+
+    setTimeout(() => {
+      window.scrollBy(0, -100);
+    }, 700);
+
   } else {
       
       resultslist.innerHTML = `<p>Oops~ The title ${title} was not found.</p>`;
+      document.getElementById("resultslist").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
+  
+      setTimeout(() => {
+        window.scrollBy({
+          top: -100,
+          left: 0,
+          behavior: 'smooth'
+        });
+      }, 700);
 
   }
 }
@@ -442,5 +513,13 @@ closeAllLists(e.target);
 });
 
 
+
+const scrollbtn = document.querySelector(".scroll-btn")
+scrollbtn.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+})
 
 
