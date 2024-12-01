@@ -22,7 +22,7 @@ The website’s design will be inspired by the clean, minimalist aesthetic commo
 ## Design Process
 When you think about Movies or Drama Series, most people would think of Netflix, or maybe even Disney+. But isnt there many other streaming websites? Free ones even. "Hulu", "123Movies", "AZMovies" - Just to name afew. With that many competitors, why? or rather - how? - is Netflix the most well known among them. 
 
-### 1.__<u>Research and Discovery</u>__
+### 1.__<u>Research and Discovery</u>__    
   - __Competitive Analysis__: Studying the design, features, and user interface of established streaming platforms such as Netflix, Disney+, Amazon Prime, and Hulu. Key takeaways include the use of grid layouts for content, large visuals, personalized recommendations, and seamless navigation.
   
  - __User Personas__: Creating detailed user personas to understand the target audience’s needs, preferences, and pain points. For example, we might have personas like "Tech-Savvy Teenagers," "Busy Professionals," and "Families." This helps define the user experience (UX) and interface (UI) design in a way that appeals to these groups. For this project, I want the website to heavily appeal to those of the "Tech-Savvy" persona. Meaning that the experience has to be intuitive, as well as cutting edge for this group of people to enjoy.
@@ -44,6 +44,11 @@ Existing
 - [Preloader](#css-animated-preloader)
 - [Animated Navigation Bar](#css-animated-navigation-bar)
 - [Scroll Interactive Background](#js-scroll-interactive-animated-background)
+- [JS Movie description](#js-movie-description)
+- [CSS Login/signup swapping Card](#css-loginsignup-swapping-card)
+- [JS logged-in navbar](#js-logged-in-navbar)
+- [CSS Interactive subscriptions display](#css-interactive-subscriptions-display)
+
 
 WIP
 ### __<u>Existing</u>__
@@ -70,7 +75,7 @@ WIP
 - Implemented transitions for the navigation bar after the preload completed.
 
 
-### JS Scroll-Interactive Animated Background
+### __JS Scroll-Interactive Animated Background__
 
 #### Why?
 - More of a "Design Choice", giving the website a modern, clean look. Feedback from scrolling, as well as the smooth transition, also contribute to the overall appeal of the website.
@@ -81,9 +86,65 @@ WIP
 - Originally, I was going to use the rendered 3D video as the background, but quickly realized that the video didn’t work well with the scroll bar (the animation was too rough). So, using a [thread from GSAP.com](#credits) I found online, I managed to find a way to make smoother animations.
 - The method was to use a canvas and replace the image as the user scrolls, or as the animation plays. This method (is said to) have been used by large companies such as Apple to display their 3D models/products.
 
+### __JS Custom Autocomplete Searchbar__
+
+#### Why?
+- Makes searching for movies much easier
+- can be customized to show specific number of recommendations
+- can be customized to redefine recommendation priority (eg. any matching substring, matching starting substring)
+- **Feature is based off autocomplete bar from [W3School](#credits)
+
+#### How was it done?
+- Defined lists containing movie names
+- listens for typing
+- compares input substring with the list and checks for result
+- creates div for each matching result
+- paired with CSS to style the drop-down recommendations
+
+
+### __JS Movie description__
+
+#### Why?
+- Helps to achieve the goal of the website by promoting the movies provided by the company.
+
+#### How was it done?
+- Defined disctionaries in javascript
+- gets input from the search bar
+- Replaced inner html with the results container and respective movie information
+
+### __CSS Login/signup swapping Card__
+
+#### Why?
+- Provides a clean explerience with the logging in system
+
+#### How was it done?
+- using css animations 
+
+
+### __JS logged-in navbar__
+
+#### Why?
+- Shows the user icon when user is logged in
+
+#### How was it done?
+- used local storage to store the log in status
+
+
+### __CSS Interactive subscriptions display__
+
+#### Why?
+- allows the user to interact with the subscription plans
+- allows the user to compare the plans easily
+
+#### How was it done?
+- done with css animations
+- perspective attribute, rotate attribute
+-  javascript to toggle the animation
+
+
 
 ### WIP
-
+    
 ## Technologies Used
 ### Blender 
 - Used for the animation of the scroll-interactive background [here](#js-scroll-interactive-animated-background).
@@ -91,6 +152,35 @@ WIP
 
 
 ## Testing
+### __Movie search function__
+- on the website's home page, find the search bar
+- Enter movie name (currently available movies: inifnity war, end game, sukasuka, uncanny counter)
+- click the search button
+- Notice that the page scrolled to a portion of the site which shows the movie info
+
+- (optional) click the scroll-to-top button (bottom right) of the screen to return to the top to search for other movies
+
+### __User account system__
+- Go to the log in page
+- (optional) click the "Dont have an account?" button and observe the interaction
+- log in or sign in
+- observe that the login button on the nav bar has now changed to the user account
+- go to any other page (click the buttons on the logged in page or on the navbar)
+- observe that the user icon stays 
+- now click the user icon (on any page)
+- a menu pops up
+- click log out
+- observe that now the user icon has been replaced by the log in button
+
+### __Interactive subscriptions display__
+- Navigate to the subscriptions page
+- try clicking on the "Monthly, yearly" slider
+- observe that the subscriptions cards flipped over to the respective plans
+- now click one of the card
+- card flips over, the rest remains as respective
+- now toggle to "monthly, yearly" slider again
+- observe that the clicked card does not flip and all are monthly/yearly respectively
+
 
 
 ## Credits
@@ -106,3 +196,9 @@ WIP
   - Thread @ GSAP.com
 
     - https://gsap.com/community/forums/topic/29900-scroll-to-control-video-position/
+
+- <h3><u>JS Custom Autocomplete Searchbar</u></h3>
+
+  - Code modified from W3Schools.com
+
+    - https://www.w3schools.com/howto/howto_js_autocomplete.asp
