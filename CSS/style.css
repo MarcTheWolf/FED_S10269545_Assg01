@@ -409,7 +409,6 @@ html {
 .user-menu ul{
   display: flex;
   flex-direction: column;
-  align-items: left;
   text-align: left;
   
 }
@@ -879,7 +878,6 @@ html {
   }
 
   .results-desc p{
-    font-size: 30;
     color: black;
     width: 65%;
   }
@@ -917,7 +915,6 @@ html {
 
   flex-direction: column;
   font-family: "poppins", sans-serif;
-  overflow: show;
   height: 100vh;
 
 }
@@ -1091,7 +1088,6 @@ html {
 @media (max-width: 576px){
 .login-container {
   height: 100vh;
-  width: 100dw;
   overflow: hidden;
   position: relative; 
   border-radius: 20px;
@@ -1187,7 +1183,6 @@ html {
 
   flex-direction: column;
   font-family: "poppins", sans-serif;
-  overflow: show;
   height: 100vh;
 }
 
@@ -1437,7 +1432,7 @@ html {
 .flip-front {
   background-color: #f1f1f1;
   color: #333;
-  border: px solid #7e7e7e;
+  border: 2px solid #7e7e7e;
   padding: 20px;
   font-size: 20px;
 }
