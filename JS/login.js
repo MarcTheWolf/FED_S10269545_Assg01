@@ -86,10 +86,12 @@ document.addEventListener("click", function(e) {
 });
 
 
-usericon.addEventListener("click", function(e) {
-  usermenu.classList.toggle("visible");
-  e.stopPropagation(); 
-});
+if (usericon) {
+  usericon.addEventListener("click", function(e) {
+    usermenu.classList.toggle("visible");
+    e.stopPropagation();
+  });
+}
 
 
 

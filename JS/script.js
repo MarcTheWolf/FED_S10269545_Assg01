@@ -78,10 +78,12 @@ document.addEventListener("click", function(e) {
 });
 
 
-usericon.addEventListener("click", function(e) {
-  usermenu.classList.toggle("visible");
-  e.stopPropagation();
-});
+if (usericon) {
+  usericon.addEventListener("click", function(e) {
+    usermenu.classList.toggle("visible");
+    e.stopPropagation();
+  });
+}
 
 
 const logoutbtn = document.querySelector("#logout-btn")
@@ -287,7 +289,7 @@ window.addEventListener('scroll', () => {
 ///////////////////////////////
 //Autocomplete recommendation
 ///////////////////////////////
-const searches = ["The Uncanny Counter", "Avengers: Infinity War", "Avengers: End Game"]
+const searches = ["The Uncanny Counter", "Avengers: Infinity War", "Avengers: End Game", "WorldEnd: What Do You Do at the End of the World? Are You Busy? Will You Save Us? (Sukasuka)"]
 
 const searchIS = {
     "The Uncanny Counter": {
@@ -296,7 +298,8 @@ const searchIS = {
       "Release": "2023",
       "Star Rating": "8.0/10",
       "Img": "Images/Movie_Posters/The_Uncanny_Counter_2.jpg",
-      "Desc" : "Noodle shop employees by day and demon hunters by night, the Counters use special abilities to chase down malevolent spirits that prey on humans."
+      "Desc" : "Noodle shop employees by day and demon hunters by night, the Counters use special abilities to chase down malevolent spirits that prey on humans.",
+      "Video" : "Images/videos/movie-trailers/uncanny-counter.mp4"
     },
     "Avengers: Infinity War": {
       "Duration": "2hrs 29mins",
@@ -304,7 +307,8 @@ const searchIS = {
       "Release": "2018",
       "Star Rating": "8.4/10",
       "Img": "Images/Movie_Posters/Avengers_Infinity_War.jpeg",
-      "Desc" : "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe."
+      "Desc" : "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
+      "Video" : "Images/videos/movie-trailers/infinity-war.mp4"
     },
     "Avengers: End Game": {
       "Duration": "3hrs 1min",
@@ -312,7 +316,17 @@ const searchIS = {
       "Release": "2019",
       "Star Rating": "8.4/10",
       "Img": "Images/Movie_Posters/Avengers_End_Game.jpg",
-      "Desc" : "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
+      "Desc" : "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+      "Video" : "Images/videos/movie-trailers/end-game.mp4"
+    },
+    "WorldEnd: What Do You Do at the End of the World? Are You Busy? Will You Save Us? (Sukasuka)": {
+      "Duration": "12ep, 24mins",
+      "Rating": "TV-14",
+      "Release": "2017",
+      "Star Rating": "7.1/10",
+      "Img": "Images/Movie_Posters/sukasuka.jpg",
+      "Desc" : "Willem wakes up after 500 years and discovers that humanity is extinct. He and the Leprechauns band together to defeat the Beasts.",
+      "Video" : "Images/videos/movie-trailers/sukasuka.mp4"
     }
 }
 
@@ -466,8 +480,8 @@ function displayResult(title) {
         </div>
         <div class="movie-display row">
           <img src="${searchIS[title]["Img"]}">
-          <video autoplay muted loop>
-            <source src="Images/videos/pixel-city.mp4">
+          <video autoplay controls >
+            <source src="${searchIS[title]["Video"]}" alt="video">
           </video>
         </div>
         <div class="results-desc row">
